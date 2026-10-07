@@ -1,5 +1,7 @@
 <!-- Souverain.ovh -->
 
+![Commentaires — ActivityPub / Mastodon + ATProto / Bluesky](assets/commentaires-banner.jpg)
+
 🇫🇷 Français | [🇬🇧 English](README.en.md)
 
 # Souverain.ovh Commentaires — 0.2.1
