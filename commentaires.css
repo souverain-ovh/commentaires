@@ -1,0 +1,813 @@
+/* Souverain.ovh */
+
+
+.souverain-discussion,
+.souverain-discussion * {
+    box-sizing: border-box;
+}
+
+.souverain-discussion {
+
+    --sc-text: var(--ink, #18181b);
+    --sc-muted: var(--secondary, #71717a);
+    --sc-line: var(--rule, #e4e4e7);
+    --sc-soft: var(--sidebar, #f7f7f8);
+    --sc-paper: var(--paper, #ffffff);
+
+    --sc-mastodon: #6364ff;
+    --sc-bluesky: #1185fe;
+
+    --sc-success: #087a35;
+    --sc-error: #b42318;
+}
+
+.souverain-discussion [hidden] {
+    display: none !important;
+}
+
+.souverain-discussion {
+
+    margin: 0;
+
+    background: var(--sc-paper);
+
+    color: var(--sc-text);
+
+    font-family: var(--font-text, Baskerville, "Libre Baskerville", "Iowan Old Style", "Palatino Linotype", Georgia, serif);
+
+    font-size: clamp(22px, 1.25vw, 24px);
+
+    line-height: 1.68;
+}
+
+.souverain-discussion button,
+.souverain-discussion input,
+.souverain-discussion textarea {
+    font: inherit;
+}
+
+.souverain-discussion a {
+    color: inherit;
+}
+
+.souverain-discussion {
+
+    width: 100%;
+
+    max-width: none;
+
+    scroll-margin-top: 2rem;
+
+    margin: 3.5rem 0;
+}
+
+/* ==========================================================
+   EN-TÊTE
+   ========================================================== */
+
+.souverain-discussion .discussion-header {
+
+    padding-bottom: 24px;
+
+    border-bottom:
+        1px solid var(--sc-line);
+}
+
+.souverain-discussion .discussion-header-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+}
+
+.souverain-discussion .discussion-title {
+
+    margin: 0;
+
+    font-size: 39px;
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    letter-spacing: -.025em;
+}
+
+.souverain-discussion .comment-count {
+
+    color: var(--sc-muted);
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.souverain-discussion .discussion-intro {
+
+    max-width: none;
+
+    margin:
+        10px 0 0;
+
+    color: var(--sc-text);
+
+    font-size: inherit;
+}
+
+/* ==========================================================
+   FIL DE COMMENTAIRES UNIFIÉ
+   ========================================================== */
+
+.souverain-discussion .comments-feed {
+
+    margin-top: 38px;
+}
+
+/* ==========================================================
+   MESSAGES
+   ========================================================== */
+
+.souverain-discussion .post {
+
+    position: relative;
+
+    margin: 0;
+
+    padding:
+        20px 0
+        20px 60px;
+
+    border-bottom:
+        1px solid var(--sc-line);
+}
+
+.souverain-discussion .post:last-child {
+    border-bottom: 0;
+}
+
+.souverain-discussion .post-header {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 42px;
+}
+
+.souverain-discussion .avatar {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 0;
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: var(--sc-soft);
+}
+
+.souverain-discussion .identity {
+    min-width: 0;
+}
+
+.souverain-discussion .author {
+
+    font-size: 1em;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+.souverain-discussion .handle {
+
+    overflow: hidden;
+
+    margin-top: 1px;
+
+    color: var(--sc-muted);
+
+    font-size: .82em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.souverain-discussion .post-content {
+
+    margin-top: 12px;
+
+    font-size: inherit;
+
+    overflow-wrap: anywhere;
+}
+
+.souverain-discussion .post-content p {
+
+    margin:
+        0 0 .75em;
+}
+
+.souverain-discussion .post-content p:last-child {
+    margin-bottom: 0;
+}
+
+.souverain-discussion .post-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 13px;
+
+    color: var(--sc-muted);
+
+    font-size: .78em;
+}
+
+.souverain-discussion .post-meta a {
+    text-decoration: none;
+}
+
+.souverain-discussion .comment-post {
+    margin-left: 0;
+}
+
+.souverain-discussion .comment-level-2 {
+    margin-left: 16px;
+}
+
+.souverain-discussion .comment-level-3 {
+    margin-left: 32px;
+}
+
+.souverain-discussion .post-origin {
+    font-weight: 650;
+}
+
+.souverain-discussion .post-origin.mastodon {
+    color: var(--sc-mastodon);
+}
+
+.souverain-discussion .post-origin.bluesky {
+    color: var(--sc-bluesky);
+}
+
+.souverain-discussion .empty {
+
+    padding:
+        12px 0;
+
+    color: var(--sc-text);
+
+    font-size: inherit;
+}
+
+/* ==========================================================
+   ZONE DE COMMENTAIRE
+   ========================================================== */
+
+.souverain-discussion .join-discussion {
+
+    margin-top: 55px;
+
+    padding-top: 32px;
+
+    border-top:
+        1px solid var(--sc-line);
+}
+
+.souverain-discussion .join-discussion h3 {
+
+    margin:
+        0 0 8px;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+.souverain-discussion .join-intro {
+
+    max-width: none;
+
+    margin:
+        0 0 25px;
+
+    color: var(--sc-text);
+
+    font-size: inherit;
+}
+
+/* ==========================================================
+   SÉLECTEUR MASTODON / ATPROTO
+   ========================================================== */
+
+.souverain-discussion .protocol-selector {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.souverain-discussion .protocol-button {
+
+    min-height: 48px;
+
+    padding:
+        10px 15px;
+
+    border:
+        1px solid var(--sc-line);
+
+    border-radius: 9px;
+
+    background: var(--sc-paper);
+
+    color: var(--sc-text);
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.souverain-discussion .protocol-button:hover {
+    background: var(--sc-soft);
+}
+
+.souverain-discussion .protocol-button.active.mastodon {
+
+    border-color:
+        var(--sc-mastodon);
+
+    box-shadow:
+        inset 0 0 0 1px
+        var(--sc-mastodon);
+}
+
+.souverain-discussion .protocol-button.active.atproto {
+
+    border-color:
+        var(--sc-bluesky);
+
+    box-shadow:
+        inset 0 0 0 1px
+        var(--sc-bluesky);
+}
+
+/* ==========================================================
+   PANNEAUX
+   ========================================================== */
+
+.souverain-discussion .protocol-panel {
+
+    padding: 22px;
+
+    border:
+        1px solid var(--sc-line);
+
+    border-radius: 11px;
+}
+
+.souverain-discussion .protocol-title {
+
+    margin:
+        0 0 5px;
+
+    font-size: 26px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+.souverain-discussion .protocol-description {
+
+    margin:
+        0 0 20px;
+
+    color: var(--sc-text);
+
+    font-size: inherit;
+}
+
+.souverain-discussion .discussion-intro,
+.souverain-discussion .join-intro,
+.souverain-discussion .protocol-description {
+    font-weight: 700;
+}
+
+.souverain-discussion .join-intro .signup-hint,
+.souverain-discussion .join-intro .signup-hint strong {
+    font-weight: 400;
+}
+
+/* ==========================================================
+   FORMULAIRES
+   ========================================================== */
+
+.souverain-discussion .form-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: .9em;
+
+    font-weight: 650;
+}
+
+.souverain-discussion .form-label[for="mastodon-account"],
+.souverain-discussion .form-label[for="atproto-handle"] {
+    font-weight: 400;
+}
+
+.souverain-discussion .form-input {
+
+    display: block;
+
+    width: 100%;
+
+    min-height: 44px;
+
+    padding:
+        9px 12px;
+
+    margin-bottom: 12px;
+
+    border:
+        1px solid var(--sc-line);
+
+    border-radius: 7px;
+
+    background: var(--sc-paper);
+
+    color: var(--sc-text);
+}
+
+.souverain-discussion .form-input:focus,
+.souverain-discussion .reply-textarea:focus {
+
+    outline:
+        2px solid
+        rgba(17,133,254,.18);
+
+    border-color:
+        var(--sc-bluesky);
+}
+
+.souverain-discussion .action-button {
+
+    min-height: 44px;
+
+    padding:
+        10px 16px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background: var(--sc-text);
+
+    color: #fff;
+
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+.souverain-discussion .action-button:hover:not(:disabled) {
+    opacity: .88;
+}
+
+.souverain-discussion .action-button:disabled {
+
+    opacity: .55;
+
+    cursor: wait;
+}
+
+/* ==========================================================
+   COMPTE CONNECTÉ
+   ========================================================== */
+
+.souverain-discussion .connected-account {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    padding:
+        13px 15px;
+
+    border:
+        1px solid var(--sc-line);
+
+    border-radius: 9px;
+
+    background: var(--sc-soft);
+}
+
+.souverain-discussion .connected-avatar {
+
+    width: 46px;
+
+    height: 46px;
+
+    flex:
+        0 0 46px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #e4e4e7;
+}
+
+.souverain-discussion .connected-identity {
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+.souverain-discussion .connected-name {
+
+    overflow: hidden;
+
+    font-size: 1em;
+
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.souverain-discussion .connected-handle {
+
+    overflow: hidden;
+
+    margin-top: 1px;
+
+    color: var(--sc-muted);
+
+    font-size: .82em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.souverain-discussion .logout-button {
+
+    flex:
+        0 0 auto;
+
+    padding: 5px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--sc-muted);
+
+    font-size: .8em;
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+
+    cursor: pointer;
+}
+
+.souverain-discussion .logout-button:hover {
+    color: var(--sc-text);
+}
+
+/* ==========================================================
+   ÉDITEUR
+   ========================================================== */
+
+.souverain-discussion .reply-textarea {
+
+    display: block;
+
+    width: 100%;
+
+    min-height: 135px;
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid var(--sc-line);
+
+    border-radius: 8px;
+
+    background: var(--sc-paper);
+
+    color: var(--sc-text);
+
+    line-height: inherit;
+
+    resize: vertical;
+}
+
+.souverain-discussion .compose-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+    margin-top: 9px;
+}
+
+.souverain-discussion .character-counter {
+
+    color: var(--sc-muted);
+
+    font-size: .8em;
+}
+
+.souverain-discussion .status-message {
+
+    min-height: 22px;
+
+    margin-top: 14px;
+
+    color: var(--sc-text);
+
+    font-size: inherit;
+}
+
+.souverain-discussion .status-message:empty {
+    display: none;
+}
+
+.souverain-discussion .status-message.success {
+    color: var(--sc-success);
+}
+
+.souverain-discussion .status-message.error {
+    color: var(--sc-error);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 740px) {
+
+    .souverain-discussion {
+        font-size: 20px;
+        line-height: 1.62;
+    }
+
+    .souverain-discussion .discussion-title {
+        font-size: 35px;
+    }
+
+    .souverain-discussion .join-discussion h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+
+.souverain-discussion {
+
+        width: 100%;
+
+        margin:
+            36px 0;
+    }
+
+.souverain-discussion .discussion-header-top {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap: 5px;
+    }
+
+.souverain-discussion .post {
+        padding-left: 52px;
+    }
+
+.souverain-discussion .avatar {
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+.souverain-discussion .comment-level-2 {
+        margin-left: 8px;
+    }
+
+.souverain-discussion .comment-level-3 {
+        margin-left: 16px;
+    }
+
+.souverain-discussion .protocol-selector {
+
+        grid-template-columns:
+            1fr;
+    }
+
+.souverain-discussion .protocol-panel {
+        padding: 18px;
+    }
+
+.souverain-discussion .connected-account {
+
+        align-items:
+            center;
+
+        flex-wrap: wrap;
+    }
+
+.souverain-discussion .logout-button {
+        white-space: nowrap;
+    }
+
+.souverain-discussion .compose-footer {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+    }
+
+.souverain-discussion .character-counter {
+        text-align: right;
+    }
+
+.souverain-discussion .action-button {
+        width: 100%;
+    }
+}
+
+.souverain-discussion .connected-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+
+/* Le gabarit autonome conserve une marge sans modifier le body du thème. */
+main.souverain-discussion {
+    width: min(100% - 32px, 760px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.souverain-discussion .network-warning {
+    padding: 12px 14px;
+    border-left: 3px solid var(--sc-error);
+    background: var(--sc-soft);
+    color: var(--sc-text);
+    font-size: inherit;
+}

@@ -1,0 +1,425 @@
+<!doctype html>
+<!-- Souverain.ovh -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon article et sa discussion</title>
+<link rel="canonical" href="https://example.com/mon-article/">
+<link rel="stylesheet" href="article.css">
+<!-- Remplacer example.com et /_commentaires/ par l’origine et le chemin de config.php. -->
+<link rel="stylesheet" href="https://example.com/_commentaires/commentaires.css?v=0.2.1">
+<script src="https://example.com/_commentaires/config-public.php" defer></script>
+<script src="https://example.com/_commentaires/atproto-oauth.js?v=0.2.1" defer></script>
+<script src="https://example.com/_commentaires/commentaires.js?v=0.2.1" defer></script>
+</head>
+<body>
+<main>
+<article>
+  <h1>Mon article</h1>
+  <p>Le contenu de l’article reste ici, avant la discussion.</p>
+</article>
+<!-- Une seule discussion par page. data-article-url doit contenir l’URL publique canonique
+     de cet article, avec la même origine HTTPS que site_url dans config.php. -->
+<section id="discussion" class="souverain-discussion" aria-labelledby="discussion-title" data-article-url="https://example.com/mon-article/">
+
+
+<header class="discussion-header">
+
+    <div class="discussion-header-top">
+
+        <h2 id="discussion-title" class="discussion-title">
+            Discussion
+        </h2>
+
+        <div
+            id="total-comments"
+            class="comment-count">
+
+            Recherche des commentaires…
+
+        </div>
+
+    </div>
+
+
+    <p class="discussion-intro">
+
+        Retrouvez ici les réponses publiées sur
+        Mastodon et Bluesky autour de cet article.
+
+    </p>
+
+</header>
+
+
+
+
+<div
+    id="comments-feed"
+    class="comments-feed"
+    aria-live="polite">
+
+    <div class="empty">
+        Recherche des réponses…
+    </div>
+
+</div>
+
+
+<section class="join-discussion">
+
+    <h3>
+        Rejoindre la discussion
+    </h3>
+
+    <p class="join-intro">
+
+        Publiez votre réponse depuis cette page
+        avec votre compte Mastodon ou ATProto.
+        Le commentaire sera publié sur le réseau
+        choisi et rattaché à la conversation
+        correspondante.
+        <br><br>
+        <span class="signup-hint">
+        Pas encore de compte ?
+        Rejoignez
+        <a href="https://mastodon.social/auth/sign_up"
+           target="_blank"
+           rel="noopener noreferrer">🐘 Mastodon</a>
+        ou
+        <a href="https://portal.eurosky.tech/create-account"
+           target="_blank"
+           rel="noopener noreferrer">🦋 Bluesky</a>
+        pour participer à la conversation.
+        </span>
+
+    </p>
+
+
+    <div class="protocol-selector">
+
+        <button
+            id="select-mastodon"
+            class="protocol-button mastodon active"
+            type="button">
+
+            🐘 Mastodon
+
+        </button>
+
+
+        <button
+            id="select-atproto"
+            class="protocol-button atproto"
+            type="button">
+
+            🦋 Bluesky / ATProto
+
+        </button>
+
+    </div>
+
+
+    <section
+        id="mastodon-panel"
+        class="protocol-panel">
+
+        <h4 class="protocol-title">
+            Répondre avec Mastodon
+        </h4>
+
+        <p class="protocol-description">
+
+            Connectez votre compte Mastodon.
+            Votre réponse sera publiée comme une
+            réponse au message associé à cet article.
+
+        </p>
+
+
+        <div
+            id="mastodon-connection-status"
+            class="status-message">
+
+            Vérification de la session Mastodon…
+
+        </div>
+
+
+        <div
+            id="mastodon-connected-account"
+            class="connected-account"
+            hidden>
+
+            <span id="mastodon-connected-avatar" class="connected-avatar" hidden></span>
+
+
+            <div class="connected-identity">
+
+                <div
+                    id="mastodon-connected-name"
+                    class="connected-name">
+                </div>
+
+                <div
+                    id="mastodon-connected-handle"
+                    class="connected-handle">
+                </div>
+
+            </div>
+
+
+            <button
+                id="mastodon-logout"
+                class="logout-button"
+                type="button">
+
+                Se déconnecter
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="mastodon-login">
+
+            <label
+                class="form-label"
+                for="mastodon-account">
+
+                Votre compte Mastodon
+
+            </label>
+
+            <input
+                id="mastodon-account"
+                class="form-input"
+                type="text"
+                placeholder="@utilisateur@instance.tld"
+                autocomplete="username"
+                spellcheck="false">
+
+
+            <button
+                id="mastodon-login-button"
+                class="action-button"
+                type="button">
+
+                Se connecter avec Mastodon
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="mastodon-compose"
+            hidden>
+
+            <label
+                class="form-label"
+                for="mastodon-reply">
+
+                Votre réponse
+
+            </label>
+
+
+            <textarea
+                id="mastodon-reply"
+                class="reply-textarea"
+                maxlength="500"
+                rows="5"
+                placeholder="Écrire une réponse…"></textarea>
+
+
+            <div class="compose-footer">
+
+                <div
+                    id="mastodon-counter"
+                    class="character-counter">
+
+                    0 / 500
+
+                </div>
+
+
+                <button
+                    id="mastodon-publish"
+                    class="action-button"
+                    type="button">
+
+                    Publier avec Mastodon
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="mastodon-publish-status"
+                class="status-message"
+                aria-live="polite">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="atproto-panel"
+        class="protocol-panel"
+        hidden>
+
+        <h4 class="protocol-title">
+            Répondre avec Bluesky / ATProto
+        </h4>
+
+        <p class="protocol-description">
+
+            Connectez votre compte ATProto.
+            Votre commentaire sera publié en réponse à la publication associée à cet article.
+
+        </p>
+
+
+        <div
+            id="atproto-connection-status"
+            class="status-message">
+
+            Initialisation ATProto…
+
+        </div>
+
+
+        <div
+            id="atproto-connected-account"
+            class="connected-account"
+            hidden>
+
+            <span id="atproto-connected-avatar" class="connected-avatar" hidden></span>
+
+
+            <div class="connected-identity">
+
+                <div
+                    id="atproto-connected-name"
+                    class="connected-name">
+                </div>
+
+                <div
+                    id="atproto-connected-handle"
+                    class="connected-handle">
+                </div>
+
+            </div>
+
+
+            <button
+                id="atproto-logout"
+                class="logout-button"
+                type="button">
+
+                Se déconnecter
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="atproto-login"
+            hidden>
+
+            <label
+                class="form-label"
+                for="atproto-handle">
+
+                Votre identifiant ATProto
+
+            </label>
+
+            <input
+                id="atproto-handle"
+                class="form-input"
+                type="text"
+                placeholder="exemple.bsky.social"
+                autocomplete="username"
+                spellcheck="false">
+
+
+            <button
+                id="atproto-login-button"
+                class="action-button"
+                type="button">
+
+                Se connecter avec ATProto
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="atproto-compose"
+            hidden>
+
+            <label
+                class="form-label"
+                for="atproto-reply">
+
+                Votre réponse
+
+            </label>
+
+
+            <textarea
+                id="atproto-reply"
+                class="reply-textarea"
+                maxlength="300"
+                rows="5"
+                placeholder="Écrire une réponse…"></textarea>
+
+
+            <div class="compose-footer">
+
+                <div
+                    id="atproto-counter"
+                    class="character-counter">
+
+                    0 / 300
+
+                </div>
+
+
+                <button
+                    id="atproto-publish"
+                    class="action-button"
+                    type="button">
+
+                    Publier avec ATProto
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="atproto-publish-status"
+                class="status-message"
+                aria-live="polite">
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+</section>
+</main>
+</body>
+</html>

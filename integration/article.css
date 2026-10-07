@@ -1,0 +1,34 @@
+/* Souverain.ovh */
+/* Présentation de la page d’exemple uniquement, à remplacer par votre thème. */
+:root {
+    --font-text: Baskerville, "Libre Baskerville", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --ink: #2c2c2b;
+    --paper: #fffdf9;
+    --secondary: #595752;
+    --rule: #d8d0c5;
+    --sidebar: #eef1f4;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font: 400 clamp(22px, 1.25vw, 24px)/1.68 var(--font-text);
+}
+
+main {
+    max-width: 1000px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+article h1 {
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+@media (max-width: 740px) {
+    body { font-size: 20px; line-height: 1.62; }
+    main { margin: 28px auto; padding: 0 20px; }
+}

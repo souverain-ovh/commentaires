@@ -1,0 +1,3 @@
+# Souverain.ovh
+# Vérifications locales uniquement : ne pas les exécuter via HTTP.
+Require all denied

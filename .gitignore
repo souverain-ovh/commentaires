@@ -1,0 +1,5 @@
+# Souverain.ovh
+node_modules/
+build-metafile.json
+*.log
+.DS_Store
