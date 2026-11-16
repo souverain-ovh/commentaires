@@ -107,4 +107,4 @@ Do not copy `node_modules` to the hosting environment. For a normal installation
 
 ## License
 
-The project's own code is released under the [0BSD license](LICENSE): use, copying, modification, and redistribution are permitted without prior authorization or mandatory attribution. It is provided without warranty. Third-party dependencies retain their own licenses; see [LICENSE-NOTICE.md](LICENSE-NOTICE.md) and [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+The project's own code is released under the [ALF license](LICENSE): use, copying, modification, and redistribution are permitted without prior authorization or mandatory attribution. It is provided without warranty. Third-party dependencies retain their own licenses; see [LICENSE-NOTICE.md](LICENSE-NOTICE.md) and [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
