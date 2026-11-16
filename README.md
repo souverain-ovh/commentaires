@@ -107,4 +107,4 @@ Ne copiez pas `node_modules` sur l’hébergement. Pour l’installation normale
 
 ## Licence
 
-Le code propre au projet est sous [licence 0BSD](LICENSE) : utilisation, copie, modification et redistribution permises sans autorisation préalable ni attribution obligatoire. Il est fourni sans garantie. Les dépendances tierces conservent leurs licences ; voir [LICENSE-NOTICE.md](LICENSE-NOTICE.md) et [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+Le code propre au projet est sous [licence ALF](LICENSE) : utilisation, copie, modification et redistribution permises sans autorisation préalable ni attribution obligatoire. Il est fourni sans garantie. Les dépendances tierces conservent leurs licences ; voir [LICENSE-NOTICE.md](LICENSE-NOTICE.md) et [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
