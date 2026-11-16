@@ -2,7 +2,7 @@
 
 # Licence du projet et bibliothèques tierces
 
-Le code et la documentation propres au projet Souverain.ovh Commentaires sont distribués sous **ALF**. Le texte complet est dans [LICENSE](LICENSE) ; la [version de référence](https://github.com/A-LA-FRENCH/dictionnaire-amoureux-du-franco-maximalisme/blob/main/LICENSE.md) est publiée par A la French.
+Le code et la documentation propres au projet Souverain.ovh Commentaires sont distribués sous **ALF**. Le texte complet est dans [LICENSE](LICENSE) ; la [version de référence](https://github.com/A-LA-FRENCH/dictionnaire-amoureux-du-franco-maximalisme/blob/main/LICENSE.md) est publiée par À la French.
 
 Vous pouvez utiliser, copier, modifier et redistribuer ce code pour tout usage, y compris commercial, sans demander d’autorisation à Souverain.ovh et sans obligation d’attribution ou de publication de vos modifications. Le logiciel est fourni sans garantie, conformément au texte de la licence.
 
